@@ -1,82 +1,26 @@
 
 ### For BiliBili, Zhihu, Netease Music
-- Block ADs   
-- Support latest app version
+
 
 ```
 [Rule]
-
-//Netease Music
-AND,((USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*), (NOT,((DOMAIN-SUFFIX,music.126.net)))),REJECT
-AND,((USER-AGENT,NeteaseMusic*), (NOT,((DOMAIN-SUFFIX,music.163.com)))),REJECT
-USER-AGENT,neteasemusic*,REJECT
 
 //Zhihu
 AND,((USER-AGENT,ZhihuHybrid*), (NOT,((DOMAIN,www.zhihu.com))), (NOT,((DOMAIN,static.zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com)))),REJECT
 AND,((USER-AGENT,osee2*), (NOT,((DOMAIN,api.zhihu.com))), (NOT,((DOMAIN,static.zhihu.com))), (NOT,((DOMAIN,www.zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com)))),REJECT
 USER-AGENT,AVOS*,REJECT
 
-//BiliBili
-AND,((USER-AGENT,bili-univeral*), (DOMAIN,api.weibo.com)),REJECT
-AND,((USER-AGENT,bili-blue*), (DOMAIN,api.weibo.com)),REJECT
-DOMAIN,thirdparty.biliapi.com,REJECT
-DOMAIN,data.bilibili.com,REJECT
-DOMAIN,cm.bilibili.com,REJECT
-DOMAIN,miniapp.bilibili.com,REJECT
 
-//Thirdparty Advertise
-DOMAIN-KEYWORD,dataflow,REJECT
-DOMAIN-KEYWORD,inmobi,REJECT
-DOMAIN,app.adjust.com,REJECT
-DOMAIN-KEYWORD,adsystem,REJECT
-DOMAIN-KEYWORD,appsflyer,REJECT
-DOMAIN,graph.facebook.com,REJECT
-DOMAIN-SUFFIX,app-measurement.com,REJECT
-DOMAIN-KEYWORD,fenxi,REJECT
-DOMAIN-KEYWORD,uploadMobileData,REJECT
-DOMAIN-KEYWORD,omniture,REJECT
-DOMAIN-SUFFIX,mob.com,REJECT
-DOMAIN,applog.uc.cn,REJECT
-DOMAIN,api.joybj.com,REJECT
-DOMAIN,api.whizzone.com,REJECT
-DOMAIN-KEYWORD,track,REJECT
-DOMAIN-KEYWORD,traffic,REJECT
-DOMAIN-SUFFIX,mmstat.com,REJECT
-DOMAIN-KEYWORD,umeng,REJECT
-DOMAIN-SUFFIX,4paradigm.com,REJECT
-DOMAIN-KEYWORD,talkingdata,REJECT
-DOMAIN-SUFFIX,mopub.com,REJECT
-DOMAIN-KEYWORD,logger,REJECT
-DOMAIN-SUFFIX,adthor.com,REJECT
-DOMAIN-SUFFIX,catch.gift,REJECT
-DOMAIN-SUFFIX,pubnative.net,REJECT
-DOMAIN-SUFFIX,flurry.com,REJECT
-
-//Google&Youtube
-DOMAIN,mtalk.google.com,REJECT
-DOMAIN,ssl.google-analytics.com,REJECT
-DOMAIN,suggestqueries.google.com,REJECT
-DOMAIN,www.googleadservices.com,REJECT
-DOMAIN-SUFFIX,doubleclick.net,REJECT
-DOMAIN-KEYWORD,adservice,REJECT
-
-//QQ
-DOMAIN,pingma.qq.com,REJECT
-DOMAIN,fusion.qq.com,REJECT
-DOMAIN,lbs.map.qq.com,REJECT
-DOMAIN,ios.bugly.qq.com,REJECT
-DOMAIN,up-hl.3g.qq.com,REJECT
-DOMAIN,cgi.connect.qq.com,REJECT
+//Netease Music
+AND,((USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*), (NOT,((DOMAIN,music.163.com))), (NOT,((DOMAIN-SUFFIX,music.126.net)))),REJECT
+AND,((USER-AGENT,NeteaseMusic*), (NOT,((DOMAIN,music.163.com))), (NOT,((DOMAIN-SUFFIX,music.163.com)))),REJECT
+USER-AGENT,neteasemusic*,REJECT
 
 
 [URL Rewrite]
-https://app.bilibili.com/x/v2/param - reject
 https://app.bilibili.com/x/v2/search/defaultword - reject
 https://app.bilibili.com/x/v2/search/recommend - reject
 https://app.bilibili.com/x/v2/search/hot - reject
-https://app.bilibili.com/x/v2/rank.*rid=168 - reject
-https://app.bilibili.com/x/v2/rank.*rid=5 - reject
-https://api.bilibili.com/pgc/season/rank/cn - reject
 http://app.bilibili.com/x/v2/dataflow - reject
 
 https://api.zhihu.com.*launch.* - reject
