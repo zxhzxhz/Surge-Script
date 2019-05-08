@@ -5,37 +5,50 @@
 ```
 [Rule]
 
-//Zhihu
-AND,((USER-AGENT,ZhihuHybrid*), (NOT,((DOMAIN,www.zhihu.com))), (NOT,((DOMAIN,static.zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com)))),REJECT
-AND,((USER-AGENT,osee2*), (NOT,((DOMAIN,api.zhihu.com))), (NOT,((DOMAIN,lens.zhihu.com))), (NOT,((DOMAIN,static.zhihu.com))), (NOT,((DOMAIN,www.zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com)))),REJECT
-USER-AGENT,AVOS*,REJECT
+RULE-SET,https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/ad.list,REJECT
 
 
 //Netease Music
-AND,((USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*), (NOT,((DOMAIN,music.163.com))), (NOT,((DOMAIN-SUFFIX,music.126.net)))),REJECT
-AND,((USER-AGENT,NeteaseMusic*), (NOT,((DOMAIN,music.163.com))), (NOT,((DOMAIN-SUFFIX,music.163.com)))),REJECT
 USER-AGENT,neteasemusic*,REJECT
+URL-REGEX,http://interface.music.163.com/eapi/ad,REJECT
+URL-REGEX,http://p.c.music.126.net.*jpg$,REJECT
+URL-REGEX,http://iadmusicmat.music.126.net.*jpg$,REJECT
+URL-REGEX,http://music.163.com/api/feedback,REJECT-TINYGIF
+URL-REGEX,http://interface.music.163.com/eapi/log,REJECT-TINYGIF
+AND,((USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*),(NOT,((DOMAIN,music.163.com))), (NOT,((DOMAIN-SUFFIX,music.126.net)))),REJECT
+AND,((USER-AGENT,NeteaseMusic*), (NOT,((DOMAIN,music.163.com))), (NOT,((DOMAIN-SUFFIX,music.163.com)))),REJECT
 
 
-[URL Rewrite]
-https://app.bilibili.com/x/v2/search/defaultword - reject
-https://app.bilibili.com/x/v2/search/recommend - reject
-https://app.bilibili.com/x/v2/search/hot - reject
-http://app.bilibili.com/x/v2/dataflow - reject
 
-https://api.zhihu.com.*launch.* - reject
-https://api.zhihu.com/ab/api - reject
-https://api.zhihu.com/ad-style-service/request - reject
-https://api.zhihu.com/banners - reject
-https://api.zhihu.com/market/popover - reject
-https://api.zhihu.com/search/top_search - reject
-https://api.zhihu.com/search/tabs - reject
-https://api.zhihu.com/zst - reject
-https://api.zhihu.com/answers/.*/comments/featured-comment-ad - reject
+//Zhihu
+URL-REGEX,https://api.zhihu.com.*launch,REJECT
+URL-REGEX,https://api.zhihu.com/ab/api,REJECT
+URL-REGEX,https://api.zhihu.com/ad-style-service/request,REJECT
+URL-REGEX,https://api.zhihu.com/banners,REJECT
+URL-REGEX,https://api.zhihu.com/market/popover,REJECT
+URL-REGEX,https://api.zhihu.com/search/top_search,REJECT
+URL-REGEX,https://api.zhihu.com/search/tabs,REJECT
+URL-REGEX,https://api.zhihu.com/zst,REJECT
+URL-REGEX,https://api.zhihu.com/answers/.*/comments/featured-comment-ad,REJECT
+USER-AGENT,AVOS*,REJECT
+AND,((USER-AGENT,ZhihuHybrid*), (NOT,((DOMAIN,www.zhihu.com))), (NOT,((DOMAIN,static.zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com)))),REJECT
+AND,((USER-AGENT,osee2*), (NOT,((DOMAIN,api.zhihu.com))), (NOT,((DOMAIN,lens.zhihu.com))), (NOT,((DOMAIN,static.zhihu.com))), (NOT,((DOMAIN,www.zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com)))),REJECT
 
-http://interface.music.163.com/eapi/ad - reject
-http://iadmusicmat.music.126.net/.*jpg$ - reject
-http://p.c.music.126.net/.*jpg$ - reject
+
+//BiliBili
+DOMAIN,dataflow.biliapi.com,REJECT-TINYGIF
+DOMAIN,data.bilibili.com,REJECT-TINYGIF
+DOMAIN,thirdparty.biliapi.com,REJECT
+DOMAIN,cm.bilibili.com,REJECT
+URL-REGEX,http://app.bilibili.com/x/v2/dataflow/report,REJECT-TINYGIF
+URL-REGEX,https://app.bilibili.com/x/v2/search/defaultword,REJECT
+URL-REGEX,https://app.bilibili.com/x/v2/search/recommend,REJECT
+URL-REGEX,https://app.bilibili.com/x/v2/search/hot,REJECT
+URL-REGEX,https://app.bilibili.com/x/v2/rank.*rid=168,REJECT
+URL-REGEX,https://app.bilibili.com/x/v2/rank.*rid=5,REJECT
+URL-REGEX,https://api.bilibili.com/pgc/season/rank/cn,REJECT
+AND,((USER-AGENT,bili*), (NOT,((DOMAIN-SUFFIX,bilibili.com))), (NOT,((DOMAIN-SUFFIX,hdslb.com)))),REJECT
+
 
 
 [MITM]
