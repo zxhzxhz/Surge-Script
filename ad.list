@@ -36,6 +36,10 @@ DOMAIN-KEYWORD,adservice
 USER-AGENT,TencentConnect*
 DOMAIN,pingma.qq.com
 DOMAIN,fusion.qq.com
+DOMAIN,lbs.map.qq.com
+DOMAIN,ios.bugly.qq.com
+DOMAIN,up-hl.3g.qq.com
+DOMAIN,cgi.connect.qq.com
 DOMAIN,ad.qq.com
 DOMAIN,ad.qun.qq.com
 DOMAIN,adping.qq.com
