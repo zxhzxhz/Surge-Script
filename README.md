@@ -1,5 +1,5 @@
 
-### For BiliBili, Zhihu, Netease Music
+### For BiliBili, Zhihu
 
 
 ```
@@ -8,15 +8,7 @@
 RULE-SET,https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/ad.list,REJECT
 
 
-//Netease Music
-USER-AGENT,neteasemusic*,REJECT
-URL-REGEX,http://interface.music.163.com/eapi/ad,REJECT
-URL-REGEX,http://p.c.music.126.net.*jpg$,REJECT
-URL-REGEX,http://iadmusicmat.music.126.net.*jpg$,REJECT
-URL-REGEX,http://music.163.com/api/feedback,REJECT-TINYGIF
-URL-REGEX,http://interface.music.163.com/eapi/log,REJECT-TINYGIF
-AND,((USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*),(NOT,((DOMAIN,music.163.com))), (NOT,((DOMAIN-SUFFIX,music.126.net)))),REJECT
-AND,((USER-AGENT,NeteaseMusic*), (NOT,((DOMAIN,music.163.com))), (NOT,((DOMAIN-SUFFIX,music.163.com)))),REJECT
+
 
 
 
