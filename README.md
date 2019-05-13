@@ -8,24 +8,16 @@
 RULE-SET,https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/ad.list,REJECT
 
 
-
-
-
-
 //Zhihu
+DOMAIN,mqtt.zhihu.com,REJECT
+DOMAIN-SUFFIX,xdrig.com,REJECT
+URL-REGEX,https://api.zhihu.com/(fringe|zst|real_time|ad-style-service|ab|banners|topstory/hot-lists|market/popover|mqtt|me),REJECT
 URL-REGEX,https://api.zhihu.com.*launch,REJECT
-URL-REGEX,https://api.zhihu.com/ab/api,REJECT
-URL-REGEX,https://api.zhihu.com/ad-style-service/request,REJECT
-URL-REGEX,https://api.zhihu.com/banners,REJECT
-URL-REGEX,https://api.zhihu.com/market/popover,REJECT
-URL-REGEX,https://api.zhihu.com/search/top_search,REJECT
-URL-REGEX,https://api.zhihu.com/search/tabs,REJECT
-URL-REGEX,https://api.zhihu.com/zst,REJECT
+URL-REGEX,https://api.zhihu.com/search/(top|tabs|preset),REJECT
 URL-REGEX,https://api.zhihu.com/answers/.*/comments/featured-comment-ad,REJECT
 USER-AGENT,AVOS*,REJECT
 AND,((USER-AGENT,ZhihuHybrid*), (NOT,((DOMAIN,www.zhihu.com))), (NOT,((DOMAIN,static.zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com)))),REJECT
 AND,((USER-AGENT,osee2*), (NOT,((DOMAIN,api.zhihu.com))), (NOT,((DOMAIN,lens.zhihu.com))), (NOT,((DOMAIN,static.zhihu.com))), (NOT,((DOMAIN,www.zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com)))),REJECT
-
 
 //BiliBili
 DOMAIN,dataflow.biliapi.com,REJECT-TINYGIF
@@ -33,20 +25,14 @@ DOMAIN,data.bilibili.com,REJECT-TINYGIF
 DOMAIN,thirdparty.biliapi.com,REJECT
 DOMAIN,cm.bilibili.com,REJECT
 URL-REGEX,http://app.bilibili.com/x/v2/dataflow/report,REJECT-TINYGIF
-URL-REGEX,https://app.bilibili.com/x/v2/search/defaultword,REJECT
-URL-REGEX,https://app.bilibili.com/x/v2/search/recommend,REJECT
-URL-REGEX,https://app.bilibili.com/x/v2/search/hot,REJECT
-URL-REGEX,https://app.bilibili.com/x/v2/rank.*rid=168,REJECT
-URL-REGEX,https://app.bilibili.com/x/v2/rank.*rid=5,REJECT
+URL-REGEX,https://app.bilibili.com/x/v2/search/(defaultword|hot|recommend),REJECT
+URL-REGEX,https://app.bilibili.com/x/v2/rank.*rid=(168|5),REJECT
 URL-REGEX,https://api.bilibili.com/pgc/season/rank/cn,REJECT
 AND,((USER-AGENT,bili*), (NOT,((DOMAIN-SUFFIX,bilibili.com))), (NOT,((DOMAIN-SUFFIX,hdslb.com)))),REJECT
 
 
 
 [MITM]
-auto-bypass=false
-skip-server-cert-verify = true
-tcp-connection = true
 hostname = api.zhihu.com, app.bilibili.com, api.bilibili.com, interface.music.163.com
 
 [Script]
