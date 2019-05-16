@@ -11,4 +11,6 @@ obj1.forEach(function (element, index, array) {
    });
 obj['data']['relates']=obj1
 
+delete obj['data']['cms']
+
 JSON.stringify(obj);
