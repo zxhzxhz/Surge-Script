@@ -11,7 +11,7 @@ RULE-SET,https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/a
 //Zhihu
 DOMAIN,mqtt.zhihu.com,REJECT
 DOMAIN-SUFFIX,xdrig.com,REJECT
-URL-REGEX,https://api.zhihu.com/(fringe|zst|real_time|ad-style-service|ab|banners|topstory/hot-lists|market/popover|mqtt|me),REJECT
+URL-REGEX,https://api.zhihu.com/(fringe|zst|real_time|ad-style-service|ab|banners|topstory/hot-lists|market/popover|mqtt),REJECT
 URL-REGEX,https://api.zhihu.com.*launch,REJECT
 URL-REGEX,https://api.zhihu.com/search/(top|tabs|preset),REJECT
 URL-REGEX,https://api.zhihu.com/answers/.*/comments/featured-comment-ad,REJECT
@@ -33,7 +33,7 @@ AND,((USER-AGENT,bili*), (NOT,((DOMAIN-SUFFIX,bilibili.com))), (NOT,((DOMAIN-SUF
 
 
 [MITM]
-hostname = api.zhihu.com, app.bilibili.com, api.bilibili.com, interface.music.163.com
+hostname = api.zhihu.com, app.bilibili.com, api.bilibili.com
 
 [Script]
 http-response https://api.zhihu.com/topstory/follow script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20feed.js
@@ -45,5 +45,5 @@ http-response https://app.bilibili.com/x/resource/show/tab script-path=https://r
 http-response https://app.bilibili.com/x/channel/list script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20channel.js
 http-response https://app.bilibili.com/x/v2/feed script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20feed.js
 http-response https://app.bilibili.com/x/v2/account/mine script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20account.js
-http-response https://app.bilibili.com/x/v2/view.access_key script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20view%20relate.js
+http-response https://app.bilibili.com/x/v2/view\?access_key script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20view%20relate.js
 ```
