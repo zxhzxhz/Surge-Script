@@ -1,27 +1,14 @@
-
 var obj = JSON.parse(body);
 
-obj1=obj['data']['tab'];
-obj2=obj['data']['bottom'];
+obj['data']['tab'].forEach((element, index) => {
+if(!["追番","推荐","直播","热门","影视"].includes(elemnet["name"])) obj['data']['tab'].splice(index,1)  
+});
 
-
-obj1.forEach(function (element, index, array) {
-  
-    if(element['name']!="追番"&&element['name']!="推荐"&&element['name']!="直播"&&element['name']!="热门"&&element['name']!="影视"){      
-       obj1.splice(index,1)  
-    }
-
-   });
-
-obj2.forEach(function (element, index, array) {
+obj['data']['bottom'].forEach((element, index)=> {
     if(element['pos']==4){      
-       obj2.splice(index,1)  
+       obj['data']['bottom'].splice(index,1)  
     }
+});
 
-   });
-
-
-obj['data']['tab']=obj1
-obj['data']['bottom']=obj2
 delete obj['data']['top']
 JSON.stringify(obj); 
