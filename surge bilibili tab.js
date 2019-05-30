@@ -1,7 +1,7 @@
 var obj = JSON.parse(body);
 
 obj['data']['tab'].forEach((element, index) => {
-if(!["追番","推荐","直播","热门","影视"].includes(elemnet["name"])) obj['data']['tab'].splice(index,1)  
+if(!(["追番","推荐","直播","热门","影视"].includes(elemnet["name"]))) obj['data']['tab'].splice(index,1)  
 });
 
 obj['data']['bottom'].forEach((element, index)=> {
