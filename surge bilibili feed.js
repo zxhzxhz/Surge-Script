@@ -1,19 +1,9 @@
-
 var obj = JSON.parse(body); 
-
-obj1=obj['data']['items'];
-
-obj1.forEach(function (element, index, array) {
-   
-    if(element.hasOwnProperty('ad_info')||element.hasOwnProperty('banner_item')||element['card_type']=="three_item_h_v2"){ 
-       //for testing log function
-       console.log('testing')
-       console.log(index)
-       obj1.splice(index,1)  
+obj['data']['items'].forEach((element, index)=> {
+    //block ad||title||up
+   if(element['card_type']!="small_cover_v2"||["华为","小米"].includes(element['title'])||["共青团中央","广东共青团","浙江共青团","徐大sao","翔翔大作战","徐大虾咯","科技美学","敬汉卿","NathanRich火锅大王","千户长生"].includes(element['args']['up_name'])){ 
+         obj['data']['items'].splice(index,1)  
     }
 
-   });
-
-obj['data']['items']=obj1
-
+});
 JSON.stringify(obj);
