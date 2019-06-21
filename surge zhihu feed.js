@@ -4,4 +4,5 @@ body['data'].forEach((element, index)=>{
        body['data'].splice(index,1)  
     }
 })
+body=JSON.stringify(body)
 $done({body})
