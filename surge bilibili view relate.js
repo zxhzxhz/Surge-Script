@@ -1,8 +1,8 @@
-var obj = JSON.parse(body); 
-obj['data']['relates'].forEach((element, index)=> {
+let body = $response.body
+body['data']['relates'].forEach((element, index)=> {
    if(element.hasOwnProperty('is_ad')){      
-      obj['data']['relates'].splice(index,1)  
+      body['data']['relates'].splice(index,1)  
     }
 });
-delete obj['data']['cms']
-JSON.stringify(obj);
+delete body['data']['cms']
+$done({body})
