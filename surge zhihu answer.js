@@ -1,3 +1,3 @@
-var obj = JSON.parse(body); 
-delete obj['ad_info']
-JSON.stringify(obj); 
+let body = $response.body
+delete body['ad_info']
+$done({body})
