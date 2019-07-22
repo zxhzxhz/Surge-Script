@@ -31,6 +31,7 @@ DOMAIN,suggestqueries.google.com
 DOMAIN,www.googleadservices.com
 DOMAIN-SUFFIX,doubleclick.net
 DOMAIN-KEYWORD,adservice
+DOMAIN,www.google-analytics.com
 
 //QQ
 USER-AGENT,TencentConnect*
