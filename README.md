@@ -28,7 +28,9 @@ URL-REGEX,https://api.bilibili.com/pgc/season/rank/cn,REJECT
 AND,((USER-AGENT,bili*), (NOT,((DOMAIN-SUFFIX,bilibili.com))), (NOT,((DOMAIN-SUFFIX,hdslb.com)))),REJECT
 
 
-
+//Weibo International
+USER-AGENT,Weibo%20intl*,REJECT
+URL-REGEX,http://weibointl.api.weibo.com/portal.php\?a=get_coopen_ads,REJECT
 
 
 [MITM]
