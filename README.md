@@ -10,7 +10,7 @@ RULE-SET,https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/a
 //Zhihu
 DOMAIN,mqtt.zhihu.com,REJECT
 DOMAIN-SUFFIX,xdrig.com,REJECT
-URL-REGEX,https://api.zhihu.com/(fringe|zst|real_time|ad-style-service|ab|banners|topstory/hot-lists|market/popover|mqtt),REJECT
+URL-REGEX,https://api.zhihu.com/(fringe|commercial|zst|real_time|ad-style-service|ab|banners|topstory/hot-lists|market/popover|mqtt),REJECT
 URL-REGEX,https://api.zhihu.com.*(launch|recommendations),REJECT
 URL-REGEX,https://api.zhihu.com/search/(top|tabs|preset),REJECT
 URL-REGEX,https://api.zhihu.com/answers/.*/comments/featured-comment-ad,REJECT
