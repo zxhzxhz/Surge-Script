@@ -17,9 +17,8 @@ URL-REGEX,http://weibointl.api.weibo.com/portal.php\?a=get_coopen_ads,REJECT
 URL-REGEX,https://api.zhihu.com/(zst|commercial|ad-style-service|topstory/hot-lists|market/popover|search/(top|tab)|.*(recommendations|featured-comment-ad)),REJECT
 
 //BiliBili
-DOMAIN,data.bilibili.com,REJECT-TINYGIF
 URL-REGEX,https://app.bilibili.com/(pgc/season/rank/cn|x/v2/(rank.*rid=(168|5)|search/(defaultword|hot|recommend|resource))),REJECT
-AND,((USER-AGENT,bili*), (NOT,((DOMAIN-SUFFIX,bilibili.com))), (NOT,((DOMAIN-SUFFIX,hdslb.com)))),REJECT
+
 
 
 [MITM]
