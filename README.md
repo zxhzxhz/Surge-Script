@@ -17,7 +17,7 @@ URL-REGEX,https?://interface.music.163.com/eapi/(ad|search/(specialkeyword|defau
 AND,((USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*), (NOT,((DOMAIN-SUFFIX,music.126.net)))),REJECT
 
 //ZhiHu
-URL-REGEX,https://api.zhihu.com/(zst|commercial|ad-style-service|topstory/hot-lists|market/popover|search/(top|tab|preset)|.*(recommendations|featured-comment-ad|ab)),REJECT
+URL-REGEX,https://api.zhihu.com/(zst|commercial|ad-style-service|topstory/hot-lists|market/popover|search/(top|tab|preset)|.*(recommendations|featured-comment-ad)|ab),REJECT
 AND,((USER-AGENT,osee2*), (NOT,((DOMAIN,api.zhihu.com))), (NOT,((DOMAIN,link.zhihu.com))), (NOT,((DOMAIN,lens.zhihu.com))), (NOT,((DOMAIN,www.zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com)))),REJECT
 
 //BiliBili
@@ -26,7 +26,7 @@ URL-REGEX,https://app.bilibili.com/(pgc/season/rank/cn|x/v2/(rank.*rid=(168|5)|s
 
 
 [MITM]
-hostname = api.zhihu.com, app.bilibili.com, api.bilibili.com, mp.weixin.qq.com, *music.163.com
+hostname = api.zhihu.com, app.bilibili.com, api.bilibili.com, mp.weixin.qq.com, interface.music.163.com
 
 [Script]
 http-response https://api.zhihu.com/moments requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20feed.js,script-update-interval=-1
