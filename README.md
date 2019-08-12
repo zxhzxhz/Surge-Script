@@ -7,18 +7,20 @@
 RULE-SET,https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/ad.list,REJECT
 
 //WeChat
-AND,((DOMAIN,mp.weixin.qq.com), (NOT,((URL-REGEX,https://mp.weixin.qq.com/mp/(get|app))))),REJECT
+AND,((DOMAIN,mp.weixin.qq.com), (NOT,((URL-REGEX,https://mp.weixin.qq.com/(s|mp/(get|profile|app)))))),REJECT
 
 //Weibo International
-USER-AGENT,Weibo%20intl*,REJECT
+USER-AGENT,Weibo%20intl*,REJECT-TINYGIF
 
 //Netease Music
-URL-REGEX,https?://interface.music.163.com/eapi/(ad|search/(specialkeyword|defaultkeyword|hot)|abtest|sp|hot|mlivestream|store),REJECT-TINYGIF
+DOMAIN-KEYWORD,admusic,REJECT
+URL-REGEX,https?://interface.music.163.com/eapi/(ad|abtest|sp|hot|mlivestream|store|mlog|search/(specialkeyword|defaultkeyword|hot)),REJECT-TINYGIF
 AND,((USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*), (NOT,((DOMAIN-SUFFIX,music.126.net)))),REJECT
 
 //ZhiHu
-URL-REGEX,https://api.zhihu.com/(zst|commercial|ad-style-service|topstory/hot-lists|market/popover|search/(top|tab|preset)|.*(recommendations|featured-comment-ad)|ab),REJECT
+URL-REGEX,https://api.zhihu.com/(ab|fringe|zst|commercial|ad-style-service|topstory/hot-lists|market/popover|search/(top|tab|preset)|.*(recommendations|featured-comment-ad)),REJECT
 AND,((USER-AGENT,osee2*), (NOT,((DOMAIN,api.zhihu.com))), (NOT,((DOMAIN,link.zhihu.com))), (NOT,((DOMAIN,lens.zhihu.com))), (NOT,((DOMAIN,www.zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com)))),REJECT
+
 
 //BiliBili
 URL-REGEX,https://app.bilibili.com/(pgc/season/rank/cn|x/v2/(rank.*rid=(168|5)|search/(defaultword|hot|recommend|resource))),REJECT
