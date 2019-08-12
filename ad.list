@@ -15,6 +15,7 @@ DOMAIN,api.whizzone.com
 DOMAIN-KEYWORD,traffic
 DOMAIN-SUFFIX,mmstat.com
 DOMAIN-KEYWORD,umeng
+DOMAIN-KEYWORD,track
 DOMAIN-SUFFIX,4paradigm.com
 DOMAIN-KEYWORD,talkingdata
 DOMAIN-SUFFIX,mopub.com
@@ -38,7 +39,7 @@ DOMAIN-SUFFIX,3g.qq.com
 DOMAIN,pingma.qq.com
 DOMAIN,fusion.qq.com
 DOMAIN,ios.bugly.qq.com
-DOMAIN,ad.qq.com
+DOMAIN,wup.imtt.qq.com
 
 //Apple
 USER-AGENT,com.apple.AppStore.ProductPageExtension*,REJECT
