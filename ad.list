@@ -12,7 +12,6 @@ DOMAIN-SUFFIX,mob.com
 DOMAIN,applog.uc.cn
 DOMAIN,api.joybj.com
 DOMAIN,api.whizzone.com
-DOMAIN-KEYWORD,track
 DOMAIN-KEYWORD,traffic
 DOMAIN-SUFFIX,mmstat.com
 DOMAIN-KEYWORD,umeng
@@ -35,6 +34,7 @@ DOMAIN,www.google-analytics.com
 
 //QQ
 USER-AGENT,TencentConnect*
+DOMAIN,yun-hl.3g.qq.com
 DOMAIN,pingma.qq.com
 DOMAIN,fusion.qq.com
 DOMAIN,lbs.map.qq.com
