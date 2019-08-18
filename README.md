@@ -7,7 +7,7 @@
 RULE-SET,https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/ad.list,REJECT
 
 //WeChat
-AND,((DOMAIN,mp.weixin.qq.com), (NOT,((URL-REGEX,https://mp.weixin.qq.com/(s|mp/(get|profile|app)))))),REJECT
+AND,((DOMAIN,mp.weixin.qq.com), (NOT,((URL-REGEX,https://mp.weixin.qq.com/(s|mp/(get|author|profile|app)))))),REJECT
 
 //Weibo International
 USER-AGENT,Weibo%20intl*,REJECT-TINYGIF
@@ -28,7 +28,7 @@ URL-REGEX,https://app.bilibili.com/(pgc/season/rank/cn|x/v2/(rank.*rid=(168|5)|s
 
 
 [MITM]
-hostname = api.zhihu.com, app.bilibili.com, api.bilibili.com, mp.weixin.qq.com, interface.music.163.com
+hostname = api.zhihu.com, app.bilibili.com, mp.weixin.qq.com, interface.music.163.com
 
 [Script]
 http-response https://api.zhihu.com/moments requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20feed.js,script-update-interval=-1
