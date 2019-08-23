@@ -6,8 +6,8 @@
 
 RULE-SET,https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/ad.list,REJECT
 
-//WeChat
-AND,((DOMAIN,mp.weixin.qq.com), (NOT,((URL-REGEX,https://mp.weixin.qq.com/(s|mp/(get|author|profile|app)))))),REJECT
+//WeChat Article
+AND,((DOMAIN,mp.weixin.qq.com), (NOT,((URL-REGEX,https://mp.weixin.qq.com/(s|mp/(get|author|homepage|profile|app)))))),REJECT
 
 //Weibo International
 USER-AGENT,Weibo%20intl*,REJECT-TINYGIF
