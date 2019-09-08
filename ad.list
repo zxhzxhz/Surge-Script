@@ -24,6 +24,7 @@ DOMAIN-SUFFIX,adthor.com
 DOMAIN-SUFFIX,catch.gift
 DOMAIN-SUFFIX,pubnative.net
 DOMAIN-SUFFIX,flurry.com
+DOMAIN-SUFFIX,igexin.com
 
 //Google&&Youtube Premium
 DOMAIN,mtalk.google.com
@@ -37,6 +38,7 @@ DOMAIN,www.google-analytics.com
 USER-AGENT,TencentConnect*
 DOMAIN-SUFFIX,3g.qq.com
 DOMAIN,pingma.qq.com
+DOMAIN,3gimg.qq.com
 DOMAIN,fusion.qq.com
 DOMAIN,ios.bugly.qq.com
 DOMAIN,wup.imtt.qq.com
