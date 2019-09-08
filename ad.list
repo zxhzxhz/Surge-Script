@@ -48,23 +48,6 @@ USER-AGENT,com.apple.AppStore.ProductPageExtension*,REJECT
 DOMAIN,iadsdk.apple.com,REJECT
 
 //Ali
-DOMAIN,simba.m.taobao.com
-DOMAIN,tns.simba.taobao.com
-DOMAIN,redirect.simba.taobao.com
-DOMAIN,click.mz.simba.taobao.com
-DOMAIN,click.simba.taobao.com
-DOMAIN,click.tz.simba.taobao.com
-DOMAIN,dsp.simba.taobao.com
-DOMAIN,fav.simba.taobao.com
-DOMAIN,m.simba.taobao.com
-DOMAIN,mclick.simba.taobao.com
-DOMAIN,srd.simba.taobao.com
-DOMAIN,stat.simba.taobao.com
-DOMAIN,textlink.simba.taobao.com
-DOMAIN,m-adash.m.taobao.com
-DOMAIN,adashbc.m.taobao.com
-DOMAIN,adashbc.ut.taobao.com
-DOMAIN,adashx.m.taobao.com
-DOMAIN,adashxgc.ut.taobao.com
+DOMAIN-KEYWORD,adashx
 
 
