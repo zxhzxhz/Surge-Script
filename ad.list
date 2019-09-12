@@ -42,6 +42,8 @@ DOMAIN,3gimg.qq.com
 DOMAIN,fusion.qq.com
 DOMAIN,ios.bugly.qq.com
 DOMAIN,wup.imtt.qq.com
+DOMAIN,sdk.e.qq.com
+DOMAIN-SUFFIX,gdt.qq.com
 
 //Apple
 USER-AGENT,com.apple.AppStore.ProductPageExtension*,REJECT
