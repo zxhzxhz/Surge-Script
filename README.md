@@ -30,7 +30,7 @@ USER-AGENT,pixiv*,REJECT-TINYGIF
 
 
 [MITM]
-hostname = api.zhihu.com, app.bilibili.com, mp.weixin.qq.com, interface.music.163.com
+hostname = api.zhihu.com, app.bilibili.com, mp.weixin.qq.com, interface.music.163.com, oauth.secure.pixiv.net
 
 [Script]
 http-response https://api.zhihu.com/moments requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20feed.js,script-update-interval=-1
