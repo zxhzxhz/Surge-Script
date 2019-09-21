@@ -26,11 +26,16 @@ AND,((USER-AGENT,osee2*), (NOT,((DOMAIN,api.zhihu.com))), (NOT,((DOMAIN,link.zhi
 URL-REGEX,https://app.bilibili.com/x/v2/(splash|rank.*rid=(168|5)|search/(defaultword|hot|recommend|resource)),REJECT
 
 //Pixiv
-USER-AGENT,pixiv*,REJECT-TINYGIF
+AND,((USER-AGENT,pixiv*), (NOT,((DOMAIN-KEYWORD,pixiv)))),REJECT-TINYGIF
+
+
+[Header Rewrite]
+https://app-api.pixiv.net/v1/search header-replace Authorization "Bearer pvC1IuVcw76csYCv-37VotByJQ22fIvkezdV0RBvR08"
 
 
 [MITM]
-hostname = api.zhihu.com, app.bilibili.com, mp.weixin.qq.com, interface.music.163.com, oauth.secure.pixiv.net
+hostname = api.zhihu.com, app.bilibili.com, mp.weixin.qq.com, interface.music.163.com, oauth.secure.pixiv.net, app-api.pixiv.net
+
 
 [Script]
 http-response https://api.zhihu.com/moments requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20feed.js,script-update-interval=-1
