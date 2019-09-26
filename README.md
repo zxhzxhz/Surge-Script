@@ -28,6 +28,10 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|rank.*rid=(168|5)|search/(defaul
 AND,((USER-AGENT,pixiv*), (NOT,((DOMAIN-KEYWORD,pixiv)))),REJECT-TINYGIF
 
 
+[URL Rewrite]
+https://testflight.apple.com/join/(.*) itms-beta://testflight.apple.com/join/$1 302
+
+
 [MITM]
 hostname = api.zhihu.com, app.bilibili.com, mp.weixin.qq.com, interface.music.163.com, oauth.secure.pixiv.net, app-api.pixiv.net,testflight.apple.com
 
