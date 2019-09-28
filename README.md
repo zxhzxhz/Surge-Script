@@ -49,5 +49,5 @@ http-response https://app.bilibili.com/x/v2/rank requires-body=1,max-size=0,scri
 http-response https://mp.weixin.qq.com/mp/getappmsgad requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20wechat%20article.js,script-update-interval=-1
 http-response https://oauth.secure.pixiv.net/auth/token requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20pixiv%20premium.js,script-update-interval=-1
 http-request  https://app-api.pixiv.net/v1/search.*popular script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20pixiv%20search.js,script-update-interval=-1
-http-response https://testflight.apple.com/v3/accounts/.*/ru/.*?(?!accept). requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20testflight%20view.js,script-update-interval=-1
+http-response https://testflight.apple.com/v3/accounts/.*/ru/ requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20testflight%20view.js,script-update-interval=-1
 //cron "* * * * *" debug=1,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20testflight%20refresh.js,script-update-interval=-1
