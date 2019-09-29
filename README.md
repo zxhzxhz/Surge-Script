@@ -33,7 +33,7 @@ https://testflight.apple.com/join/(.*) itms-beta://testflight.apple.com/join/$1 
 
 
 [MITM]
-hostname = api.zhihu.com, app.bilibili.com, mp.weixin.qq.com, interface.music.163.com, oauth.secure.pixiv.net, app-api.pixiv.net,testflight.apple.com
+hostname = api.zhihu.com, app.bilibili.com, api.bilibili.com, mp.weixin.qq.com, interface.music.163.com, oauth.secure.pixiv.net, app-api.pixiv.net,testflight.apple.com
 
 
 [Script]
