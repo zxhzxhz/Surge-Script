@@ -3,7 +3,8 @@ b站自动解除区域限制，需要自备台湾节点
 
 [Rule]
 SCRIPT,Bangumi,台湾 BGP 中继 1
-
+[Script]
+rule Bangumi script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20autoarea.js,script-update-interval=-1
 
 */
 let url = $request.url
