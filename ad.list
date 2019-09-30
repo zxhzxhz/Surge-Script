@@ -26,7 +26,7 @@ DOMAIN-SUFFIX,pubnative.net
 DOMAIN-SUFFIX,flurry.com
 DOMAIN-SUFFIX,igexin.com
 
-//Google&&Youtube Premium
+//Google&&Youtube
 DOMAIN,mtalk.google.com
 DOMAIN,suggestqueries.google.com
 DOMAIN,www.googleadservices.com
@@ -46,8 +46,8 @@ DOMAIN,sdk.e.qq.com
 DOMAIN-SUFFIX,gdt.qq.com
 
 //Apple
-USER-AGENT,com.apple.AppStore.ProductPageExtension*,REJECT
-DOMAIN,iadsdk.apple.com,REJECT
+USER-AGENT,com.apple.AppStore.ProductPageExtension*
+DOMAIN,iadsdk.apple.com
 
 //Ali
 DOMAIN-KEYWORD,adashx
