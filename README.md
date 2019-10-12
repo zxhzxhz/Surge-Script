@@ -7,6 +7,7 @@ RULE-SET,https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/a
 AND,((DOMAIN,mp.weixin.qq.com), (NOT,((URL-REGEX,https://mp.weixin.qq.com/(s|mp/(getappmsgext|profile|author|homepage|lifedetail|app)))))),REJECT-TINYGIF
 
 //Weibo International
+URL-REGEX,https://weibointl.api.weibo.cn/portal.php\?a=get_coopen_ads,REJECT-TINYGIF
 USER-AGENT,Weibo%20intl*,REJECT-TINYGIF
 
 //Netease Music
@@ -32,7 +33,7 @@ https://testflight.apple.com/join/(.*) itms-beta://testflight.apple.com/join/$1 
 
 
 [MITM]
-hostname = api.zhihu.com, app.bilibili.com, api.bilibili.com, mp.weixin.qq.com, interface.music.163.com, oauth.secure.pixiv.net, app-api.pixiv.net,testflight.apple.com
+hostname = api.zhihu.com, app.bilibili.com, api.bilibili.com, mp.weixin.qq.com, interface.music.163.com, oauth.secure.pixiv.net, app-api.pixiv.net,testflight.apple.com, weibointl.api.weibo.cn
 
 
 [Script]
