@@ -11,7 +11,7 @@ URL-REGEX,https://weibointl.api.weibo.cn/portal.php\?a=get_coopen_ads,REJECT-TIN
 USER-AGENT,Weibo%20intl*,REJECT-TINYGIF
 
 //Netease Music
-URL-REGEX,https?://interface3?.music.163.com/eapi/(ad|abtest|sp|hot|mlivestream|store|mlog|search/(specialkeyword|defaultkeyword|hot)),REJECT-TINYGIF
+URL-REGEX,https?://interface3?.music.163.com/(store|eapi/(ad|usersafe|theme|skin|banner|sp|cloudvideo|webcache|experiment|socialsquare|comment|weixin|share|hot|mlivestream|mlog|v1/user/info|appcustomconfig|search/(specialkeyword|defaultkeyword|hot))),REJECT-TINYGIF
 AND,((USER-AGENT, %E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*),(OR,((NOT,((DOMAIN-SUFFIX,music.126.net))), (DOMAIN-KEYWORD,admusic)))),REJECT-TINYGIF
 AND,((USER-AGENT,NeteaseMusic*), (NOT,((URL-REGEX,https?://interface3?.music.163.com)))),REJECT-TINYGIF
 USER-AGENT,neteasemusic*,REJECT-TINYGIF
