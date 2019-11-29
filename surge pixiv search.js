@@ -1,4 +1,4 @@
-let url = 'http://132.145.127.5:7777/pixivtoken'
+let url = 'https://pixiv.mlyx.workers.dev/?api=pixiv'
 //DO NOT ABUSE
 
 let headers = $request.headers
