@@ -3,13 +3,11 @@
 
 RULE-SET,https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/ad.list,REJECT-TINYGIF
 
-//WeChat Article
-AND,((DOMAIN,mp.weixin.qq.com), (NOT,((URL-REGEX,https://mp.weixin.qq.com/(s|mp/(getappmsgext|profile|author|homepage|lifedetail|videoplayer|app)))))),REJECT-TINYGIF
 
 
 //ZhiHu
 URL-REGEX,https://www.zhihu.com/api/v4/mcn/,REJECT-TINYGIF
-URL-REGEX,https://api.zhihu.com/(ab|adx|fringe|drama|zst|commercial|ad-style-service|topstory/hot-lists|market/popover|search/(top|tab|preset)|.*(guide|recommendations|featured-comment-ad)),REJECT-TINYGIF
+URL-REGEX,https://api.zhihu.com/(ab|adx|fringe|drama|zst|commercial|ad-style-service|market/popover|search/(top|tab|preset)|.*(guide|recommendations|featured-comment-ad)),REJECT-TINYGIF
 AND,((USER-AGENT,osee2*), (NOT,((DOMAIN-SUFFIX,zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com)))),REJECT-TINYGIF
 
 //BiliBili
@@ -17,13 +15,9 @@ URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJ
 URL-REGEX,https://api.bilibili.com/x/v2/dm/advert,REJECT-TINYGIF
 AND,((USER-AGENT,bili*), (NOT,((DOMAIN-SUFFIX,bilibili.com))),(NOT,((DOMAIN-SUFFIX,hdslb.com)))),REJECT-TINYGIF
 
-//Pixiv
-AND,((USER-AGENT,pixiv*), (NOT,((DOMAIN-KEYWORD,pixiv)))),REJECT-TINYGIF
-
-
 
 [MITM]
-hostname = api.zhihu.com, www.zhihu.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, mp.weixin.qq.com, oauth.secure.pixiv.net, app-api.pixiv.net
+hostname = api.zhihu.com, www.zhihu.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com
 
 
 [Script]
@@ -42,5 +36,7 @@ http-response https://api.bilibili.com/x/v2/reply/main\?access_key requires-body
 http-response https://api.live.bilibili.com/xlive/app-room/v1/index/getInfoByRoom\?access_key requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20live.js,script-update-interval=-1
 
 
-http-response https://oauth.secure.pixiv.net/auth/token requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20pixiv%20premium.js,script-update-interval=-1
-http-request  https://app-api.pixiv.net/v1/search.*popular script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20pixiv%20search.js,script-update-interval=-1
+//bilibili解锁番剧地区限制,目前还在测试,可能部分番剧会出现问题。
+http-response https://api.bilibili.com/pgc/view/app/season requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/UnblockBangumi/master/surge/surge%20bilibili%20season.js
+http-response https://api.bilibili.com/pgc/player/api/playurl requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/UnblockBangumi/master/surge/surge%20bilibili%20playurl.js
+
