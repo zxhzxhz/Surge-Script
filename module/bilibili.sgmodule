@@ -5,9 +5,10 @@
 [Rule]
 URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJECT
 URL-REGEX,https://api.bilibili.com/x/v2/dm/ad,REJECT
+AND,((USER-AGENT,bili*),(NOT,((DOMAIN-SUFFIX,bilivideo.com))), (NOT,((DOMAIN-SUFFIX,bilibili.com))),(NOT,((DOMAIN-SUFFIX,hdslb.com)))),REJECT-TINYGIF
 
 [MITM]
-hostname = %APPEND% www.bilibili.com, api.bilibili.com, app.bilibili.com, api.live.bilibili.com
+hostname = %APPEND% api.bilibili.com, app.bilibili.com, api.live.bilibili.com
 
 
 [Script]

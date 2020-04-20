@@ -15,5 +15,5 @@ nohup node main.js [YOUR_BARK_ID](Optional)
 ```
 ## Surge
 ```
-snellv2 = snell, YOUR_IP, 2333, psk=password, obfs=http, obfs-host=bing.com, tfo=true
+snellv2 = snell, YOUR_IP, 2333, psk=password, obfs=http, obfs-host=bing.com, version=2, tfo=true
 ```
