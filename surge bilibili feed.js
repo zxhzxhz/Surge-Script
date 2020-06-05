@@ -21,6 +21,33 @@ body["data"]["items"].forEach((element, index) => {
 		body["data"]["items"].splice(index, 1);
 	}
 });
+body["data"]["items"].forEach((element, index) => {
+	if (
+		element.hasOwnNestedProperty("uri") &
+		element.hasOwnNestedProperty("goto")
+	) {
+		let new_uri = alwaysHiresVideo(element);
+		body["data"]["items"][index].uri = new_uri;
+	}
+});
+function alwaysHiresVideo(element) {
+	if (element.goto == "av") {
+		let uris = element.uri;
+		let uridecoded = decodeURIComponent(uris);
+		let uri_ = /(.*preload=)({.*})(.*)/gm.exec(uridecoded);
+		if (uri_.length > 2) {
+			if (uri_[2].includes("expire_time")) {
+				let obj = JSON.parse(uri_[2]);
+				obj["quality"] = obj["support_quality"][0];
+				obj = encodeURIComponent(JSON.stringify(obj));
+				let uri_m = uri_[1] + obj + uri_[3];
+				return uri_m;
+			}
+		}
+	} else {
+		return element.uri;
+	}
+}
 function itemIsFiltered(item) {
 	//original filter
 	if (item.hasOwnProperty("ad_info") || item.hasOwnProperty("banner_item")) {
