@@ -1,9 +1,11 @@
 let body = $response.body;
-Object.prototype.hasOwnNestedProperty = function (propertyPath) {
-	if (!propertyPath) return false;
+
+function hasOwnNestedProperty(obj, propertyPath) {
+	if (!propertyPath) {
+		return false;
+	}
 	var properties = propertyPath.split(".");
-	var obj = this;
-	for (var i = 0; i < properties.length; i++) {
+	for (let i = 0; i < properties.length; i++) {
 		var prop = properties[i];
 		if (!obj || !obj.hasOwnProperty(prop)) {
 			return false;
@@ -12,8 +14,7 @@ Object.prototype.hasOwnNestedProperty = function (propertyPath) {
 		}
 	}
 	return true;
-};
-
+}
 body = JSON.parse(body);
 
 body["data"]["items"].forEach((element, index) => {
@@ -23,8 +24,8 @@ body["data"]["items"].forEach((element, index) => {
 });
 body["data"]["items"].forEach((element, index) => {
 	if (
-		element.hasOwnNestedProperty("uri") &
-		element.hasOwnNestedProperty("goto")
+		element.hasOwnProperty("uri") &
+		element.hasOwnProperty("goto")
 	) {
 		let new_uri = alwaysHiresVideo(element);
 		body["data"]["items"][index].uri = new_uri;
@@ -72,7 +73,7 @@ function itemIsFiltered(item) {
 		"NathanRich火锅大王",
 		"千户长生",
 	];
-	if (item.hasOwnNestedProperty("card_type")) {
+	if (item.hasOwnProperty("card_type")) {
 		card_type_blocklist.forEach(card_type => {
 			if (item["card_type"] == card_type) {
 				return true;
@@ -80,14 +81,14 @@ function itemIsFiltered(item) {
 		});
 	}
 
-	if (item.hasOwnNestedProperty("card_goto")) {
+	if (item.hasOwnProperty("card_goto")) {
 		goto_blocklist.forEach(goto => {
 			if (goto == item["card_goto"]) {
 				return true;
 			}
 		});
 	}
-	if (item.hasOwnNestedProperty("args.up_name")) {
+	if (hasOwnNestedProperty(item,"args.up_name")) {
 		up_name_blocklist.forEach(up_name => {
 			if (items["args"]["up_name"] == up_name) {
 				return true;
@@ -95,7 +96,7 @@ function itemIsFiltered(item) {
 		});
 	}
 
-	if (item.hasOwnProperty("top_rcmd_reason")) {
+	if (hasOwnProperty("top_rcmd_reason")) {
 		if (item["top_rcmd_reason"] != "已关注") {
 			return true;
 		}
